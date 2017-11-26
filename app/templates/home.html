@@ -1,5 +1,6 @@
-<h1>Home Page</h1>
+<h1>Bloc Chat</h1>
 
 <ul>
-  <li ng-repeat="chat in home.Room.chatRooms">{{ chat }}</li>
+  <li ng-repeat="chat in home.chatRooms">{{ chat.$value }}</li>
+  <!-- <li ng-repeat="chat in home.chatRooms track by $index">{{ chat }}</li> -->
 </ul>
