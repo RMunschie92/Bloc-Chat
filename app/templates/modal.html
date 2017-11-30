@@ -1,0 +1,15 @@
+<div class="my-modal ng-scope" id="my-modal">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modal-title">Create a new room</h3>
+      </div>
+    <div class="modal-body" id="modal-body">
+      <form>
+        Enter a room name<br>
+        <input type="text" name="new-room-name">
+      </form>
+      <div class="modal-footer">
+        <button class="btn btn-warning" type="button" ng-click="modal.cancel()">Cancel</button>
+        <button class="btn btn-primary" type="button" ng-click="modal.save()">Create Room</button>
+      </div>
+    </div>
+</div>

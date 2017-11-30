@@ -1,6 +1,5 @@
 <h1>Bloc Chat</h1>
-
 <ul>
   <li ng-repeat="chat in home.chatRooms">{{ chat.$value }}</li>
-  <!-- <li ng-repeat="chat in home.chatRooms track by $index">{{ chat }}</li> -->
 </ul>
+<button class="btn btn-warning" type="button" ng-click="home.open()">New room</button>
