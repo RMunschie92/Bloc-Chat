@@ -3,7 +3,7 @@
     var modal = this;
 
     this.save = function() {
-      $uibModalInstance.close(newChatRoom);
+      $uibModalInstance.close(Room.add());
     };
 
     this.cancel = function() {
