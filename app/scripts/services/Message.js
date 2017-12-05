@@ -4,16 +4,11 @@
     var ref = firebase.database().ref().child("messages");
     var messages = $firebaseArray(ref);
 
-    console.log(ref.toString());
-    // Message.activeMessages = messages;
-
     Message.getRoomById = function(roomId) {
       var query = ref.orderByChild('roomId').equalTo(roomId);
-      console.log(query.toString());
-      // console.log(messages);
+      Message.activeMessages = $firebaseArray(query);
+      // console.log(activeMessages);
     };
-
-
 
     return Message;
   }

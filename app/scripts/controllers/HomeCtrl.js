@@ -4,8 +4,6 @@
     // links chatRooms object with database reference from Room service
     home.chatRooms = Room.all;
 
-    home.messages = Message.activeMessages;
-
     // CALLS MODAL INSTANCE
     home.open = function () {
       var modalInstance = $uibModal.open({
@@ -22,10 +20,11 @@
       home.activeRoom = event.target.id;
       // calls on function from Message.js
       Message.getRoomById(roomId);
-
+      home.messages = Message.activeMessages;
+      console.log(home.messages);
     };
 
-// UPDATE: FILTER BY SPECIFIC FUNCTION
+
 
 }
   angular

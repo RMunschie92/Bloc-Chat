@@ -11,10 +11,10 @@
   <div class="messages-container">
     <h1 class="current-room" ng-bind="home.activeRoom"></h1>
     <ul class="messages-list">
-      <li ng-repeat="message in home.messages | filter: { '$id' : roomId }">
-        <div>{{ message }}</div>
-        <div>{{ message.sentAt }}</div>
-        <div>{{ message.username }}</div>
+      <li class="message-bubble" ng-repeat="message in home.messages">
+        <div class="username">{{ message.username }}</div>
+        <div class="sentAt">{{ message.sentAt }}</div>
+        <div class="content">{{ message.content }}</div>
       </li>
     </ul>
   </div>

@@ -45,5 +45,30 @@ li {
 }
 
 .current-room {
+  padding-left: 40px;
+  font-size: 2em;
+}
 
+.message-bubble {
+  border: 1px solid grey;
+  position: relative;
+  width: 70%;
+  margin: 5px 0px;
+}
+
+.message-bubble .username {
+  font-weight: bold;
+  padding-left: 10px;
+  padding-top: 5px;
+}
+
+.message-bubble .content {
+  padding-left:10px;
+  padding-bottom: 5px;
+}
+
+.message-bubble .sentAt {
+  position: absolute;
+  right: 10px;
+  top: 5px;
 }
