@@ -1,27 +1,34 @@
 (function() {
-  function HomeCtrl(Room, $scope, $uibModal, $log, $document) {
+  function HomeCtrl(Room, Message, $scope, $uibModal, $log, $document) {
     var home = this;
-
-    // home.newRoomName = '';
-
+    // links chatRooms object with database reference from Room service
     home.chatRooms = Room.all;
-    //TO TEST ADD METHOD FROM ROOM.JS
-    // this.addRoom = Room.add();
 
+    home.messages = Message.activeMessages;
+
+    // CALLS MODAL INSTANCE
     home.open = function () {
       var modalInstance = $uibModal.open({
-        animation: true,
-        backdrop: true,
         templateUrl: '../templates/modal.html',
         controller: 'ModalInstanceCtrl',
         controllerAs: 'modal',
-        scope: $scope,
         size: 'lg',
       });
-  };
-}
+    };
 
+    // gets name of active chat room and queries messages associated with activeRoom
+    home.getRoomName = function(roomId) {
+      //sets activeRoom as value of element's id that triggered the event, in this case the element is the chat[room] in home.chatRooms. Linked to h1 element in home.html template
+      home.activeRoom = event.target.id;
+      // calls on function from Message.js
+      Message.getRoomById(roomId);
+
+    };
+
+// UPDATE: FILTER BY SPECIFIC FUNCTION
+
+}
   angular
     .module('blocChat')
-    .controller('HomeCtrl', ['Room', '$scope', '$uibModal', '$log', '$document', HomeCtrl]);
+    .controller('HomeCtrl', ['Room', 'Message', '$scope', '$uibModal', '$log', '$document', HomeCtrl]);
 })();
