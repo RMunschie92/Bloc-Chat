@@ -1,8 +1,10 @@
 (function() {
-  function HomeCtrl(Room, Message, $scope, $uibModal, $log, $document) {
+  function HomeCtrl(Room, Message, $cookies, $scope, $uibModal, $log, $document) {
     var home = this;
     // links chatRooms object with database reference from Room service
     home.chatRooms = Room.all;
+
+    home.cookies = Room.cookies
 
     // CALLS MODAL INSTANCE
     home.open = function () {
@@ -21,13 +23,17 @@
       // calls on function from Message.js
       Message.getRoomById(roomId);
       home.messages = Message.activeMessages;
-      console.log(home.messages);
     };
 
+    // FUNCTION TO DELETE COOKIES FOR TESTING PURPOSES
+    home.deleteCookies = function() {
+      $cookies.remove('blocChatCurrentUser');
+    }
 
+    home.hideShow = Room.hideShow;
 
 }
   angular
     .module('blocChat')
-    .controller('HomeCtrl', ['Room', 'Message', '$scope', '$uibModal', '$log', '$document', HomeCtrl]);
+    .controller('HomeCtrl', ['Room', 'Message', '$cookies', '$scope', '$uibModal', '$log', '$document', HomeCtrl]);
 })();

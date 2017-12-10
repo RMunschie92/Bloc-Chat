@@ -1,0 +1,14 @@
+<div class="username-modal ng-scope" id="username-modal">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modal-title">Set a username </h3>
+      </div>
+    <div class="modal-body" id="modal-body">
+      <form>
+        This name will appear when you send messges<br>
+        <input type="text" id="newUsername" ng-model="cookieVal">
+      </form>
+      <div class="modal-footer">
+        <button class="btn btn-primary" id="usernameButton" type="button" ng-click="username.checkForm(cookieVal)">Set username</button>
+      </div>
+    </div>
+</div>

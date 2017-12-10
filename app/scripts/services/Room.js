@@ -1,10 +1,12 @@
 (function() {
-  function Room($firebaseArray) {
+  function Room($firebaseArray, $cookies) {
     var Room = {};
     var ref = firebase.database().ref().child("rooms");
     var rooms = $firebaseArray(ref);
+    var cookieDisplay = $cookies.get('blocChatCurrentUser');
 
     Room.all = rooms;
+    Room.cookies = cookieDisplay;
 
     Room.add = function() {
       Room.roomName = document.getElementById("newRoomName").value;
@@ -16,11 +18,19 @@
       });
     }
 
-    console.log(Room.all);
+    if ( !Room.cookies || Room.cookies == null || Room.cookies == undefined || Room.cookies == '') {
+      Room.noCookies = true;
+      Room.hideShow = 'disabled';
+    } else {
+      Room.noCookies = false;
+      Room.hideShow = '';
+      }
+
+
     return Room;
   }
 
   angular
     .module('blocChat')
-    .factory('Room', ['$firebaseArray', Room]);
+    .factory('Room', ['$firebaseArray', '$cookies', Room]);
 })();
