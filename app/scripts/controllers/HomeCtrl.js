@@ -23,6 +23,8 @@
       // calls on function from Message.js
       Message.getRoomById(roomId);
       home.messages = Message.activeMessages;
+      home.messageComponent = document.getElementById('message-send-bar');
+      home.messageComponent.classList.remove('{{home.hideShow}}');
     };
 
     // FUNCTION TO DELETE COOKIES FOR TESTING PURPOSES
