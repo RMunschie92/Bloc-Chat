@@ -11,7 +11,7 @@
     </div>
       <button class="btn btn-warning" id="delete-cookies-button" type="button" ng-click="home.deleteCookies()">Delete Cookie for testing</button>
   </div>
-  <div class="messages-container">
+  <div id="messages-container" class="{{home.messageFieldClass}}">
     <h1 class="current-room" ng-bind="home.activeRoom"></h1>
     <ul class="messages-list">
       <li class="message-bubble" ng-repeat="message in home.messages">
@@ -20,10 +20,10 @@
         <div class="content">{{ message.content }}</div>
       </li>
     </ul>
-    <div id="message-send-bar" class="{{home.hideShow}}">
+    <div id="message-field" class="{{home.messageFieldClass}}">
       <form>
         <input type="text" placeholder="Write your message here..." id="new-message-content">
-        <button class="btn btn-primary" type="button" id="send-message-button" ng-click"home.submitMessage()">Send message</button>
+        <button class="btn btn-primary" type="button" id="send-message-button" ng-click="home.submitMessage()">Send</button>
       </form>
     </div>
   </div>

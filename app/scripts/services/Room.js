@@ -18,6 +18,7 @@
       });
     }
 
+
     if ( !Room.cookies || Room.cookies == null || Room.cookies == undefined || Room.cookies == '') {
       Room.noCookies = true;
       Room.hideShow = 'disabled';
