@@ -1,5 +1,5 @@
 <div class"home-template" id="home">
-  <div class="rooms-container">
+  <div class="rooms-container" id="rooms-container">
     <h1 class="app-title {{home.hideShow}}">Bloc Chat</h1>
     <div id="room-list-to-hide">
       <ul id="rooms-list">
@@ -7,9 +7,8 @@
           <a href="#" class="room-link {{home.hideShow}}" id="{{ chat.$value }}" data-ng-click="home.getRoomName(chat.$id)">{{ chat.$value }}</a>
         </li>
       </ul>
-      <button class="btn btn-warning {{home.hideShow}}" id="new-room-button" type="button"  ng-click="home.open()">New room</button>
+      <button class="btn btn-warning {{home.hideShow}}" id="new-room-button" type="button"  ng-click="home.open()">New Chat Room</button>
     </div>
-      <button class="btn btn-warning" id="delete-cookies-button" type="button" ng-click="home.deleteCookies()">Delete Cookie for testing</button>
   </div>
   <div id="messages-container" class="{{home.messageFieldClass}}">
     <h1 class="current-room" ng-bind="home.activeRoom"></h1>
@@ -26,5 +25,8 @@
         <button class="btn btn-primary" type="button" id="send-message-button" ng-click="home.submitMessage()">Send</button>
       </form>
     </div>
+  </div>
+  <div class="log-out-container" id="log-out-container">
+    <button class="btn btn-warning" id="log-out-button" type="button" ng-click="home.logOut()">Log Out</button>
   </div>
 </div>

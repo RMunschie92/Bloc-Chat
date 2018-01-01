@@ -1,5 +1,6 @@
 body {
-  background-color: #dfdfdf;
+  background-color: #f6f6f6;
+  /*background: linear-gradient(135deg, rgba(63,151,233,1) 0%, rgba(63,151,233,1) 16%, rgba(28,120,225,1) 84%, rgba(26,118,224,1) 88%);/*/
 }
 
 /*****************************
@@ -181,57 +182,9 @@ MESSAGES CONTAINER STYLES
 
 #send-message-button {
   width: 8%;
-  border: 1px solid #2C71D8;
-  border-radius: 15px;
-  padding: 8px;
 }
 
-  .hidden {
+  /*.hidden {
     display: none;
     border: none;
-  }
-
-
-/*************************
-  USERNAME MODAL
-*************************/
-
-#username-modal {
-  border: 1px solid #000;
-  border-radius: 15px;
-  display: flex;
-  flex-direction: column;
-  background-color: #dfdfdf;
-  position: fixed;
-  width: 25%;
-  height: 20%;
-  z-index: 100;
-  left: 40%;
-  top: 30%;
-}
-
-#username-modal h3 {
-  position: inherit;
-  text-align: center;
-  font-family: 'Barlow', sans-serif;
-}
-
-#username-modal form {
-  position: inherit;
-  text-align: center;
-  font-family: 'Open Sans', sans-serif;
-}
-
-#username-modal input {
-  position: inherit;
-  width: 60%;
-  border-radius: 15px;
-  margin: 1em 0;
-}
-
-#username-modal button {
-  position: inherit;
-  margin: 0 auto;
-  border-radius: 15px;
-
-}
+  }*/

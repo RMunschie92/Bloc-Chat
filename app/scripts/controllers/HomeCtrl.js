@@ -17,7 +17,7 @@
         templateUrl: '../templates/modal.html',
         controller: 'ModalInstanceCtrl',
         controllerAs: 'modal',
-        size: 'lg',
+        size: 'sm',
       });
     };
 
@@ -42,9 +42,10 @@
       document.getElementById('new-message-content').value = '';
     }
 
-    // FUNCTION TO DELETE COOKIES FOR TESTING PURPOSES
-    home.deleteCookies = function() {
+    // DELETE COOKIES FOR LOGGING OUT
+    home.logOut = function() {
       $cookies.remove('blocChatCurrentUser');
+      location.reload();
     }
 
     home.hideShow = Room.hideShow;
